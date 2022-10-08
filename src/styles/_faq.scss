@@ -1,0 +1,49 @@
+.faq {
+  position: relative;
+  padding: 10px 10px 50px 10px;
+  overflow: hidden;
+
+  &__title,
+  &__icon {
+    text-align: center;
+  }
+
+  &__title,
+  &__sub-title {
+    margin-top: 15px;
+    margin-bottom: 10px;
+  }
+
+  &__icon {
+    text-shadow: 0px 0px 2px black;
+  }
+
+  &__paragraph {
+    margin-bottom: 10px;
+  }
+
+  &__square-number {
+    color: blue;
+    font-weight: bold;
+    text-shadow: 1px 1px 1px black;
+  }
+
+  &__button {
+    position: fixed;
+    top: 100%;
+    left: 50%;
+    font-size: 20px;
+    transform: translate(-50%, 0%);
+    animation: button 800ms cubic-bezier(.54,.12,.46,1.48) 2s 1 normal forwards;
+  }
+
+  @keyframes button {
+    from {
+      transform: translate(-50%, 0%);
+    }
+
+    to {
+      transform: translate(-50%, -155%);
+    }
+  }
+}

@@ -1,0 +1,19 @@
+@use 'mixins';
+
+.main-container {
+  @include mixins.main-border-invert;
+
+  position: relative;
+  display: block;
+  flex-grow: 1;
+  width: 100%;
+  background: rgba(128, 128, 128, 0.1);
+  background: linear-gradient(0deg, rgba(63, 94, 251, 0.4) 0%, rgba(252, 70, 107, 0.4) 100%);
+  overflow-y: scroll;
+  overflow-x: hidden;
+
+  &--no-scroll {
+    overflow-y: hidden;
+    overflow-x: hidden;
+  }
+}

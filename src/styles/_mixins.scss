@@ -1,0 +1,18 @@
+@mixin total-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin main-border {
+  border: 2px solid #808080;
+  border-top-color: #ffffff;
+  border-left-color: #ffffff;
+  background-color: #c0c0c0;
+}
+
+@mixin main-border-invert {
+  border: 2px solid #ffffff;
+  border-top-color: #808080;
+  border-left-color: #808080;
+}

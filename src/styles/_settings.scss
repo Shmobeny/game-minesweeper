@@ -1,0 +1,43 @@
+@use 'mixins';
+
+.settings {
+  @include mixins.total-center;
+  
+  position: relative;
+  flex-wrap: wrap;
+  height: 100%;
+  padding: 15px 0;
+
+  &__title {
+    align-self: start;
+  }
+
+  &__block {
+    @include mixins.total-center;
+    
+    flex-direction: column;
+    width: 100%;
+  }
+
+  &__sub-block {
+    display: flex;
+  }
+
+  &__label {
+    margin-right: 5px;
+  }
+
+  &__output {
+    font-weight: bold;
+  }
+
+  &__range {
+    margin: 0 10px;
+  }
+
+  &__button {
+    width: 190px;
+    align-self: end;
+    font-size: 20px;
+  }
+}

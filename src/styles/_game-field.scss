@@ -1,0 +1,134 @@
+@use 'mixins';
+
+.game-field {
+  display: flex;
+  align-content: flex-start;
+  flex-wrap: wrap;
+  width: 100%;
+  
+  &__square {
+    @include mixins.total-center;
+    @include mixins.main-border;
+
+    position: relative;
+    font-size: 0px;
+    font-weight: bold;
+    text-shadow: 1px 1px 1px black;
+    transition: all 100ms ease-in-out;
+    cursor: pointer;
+
+    &:active:not(.game-field__square--exposed, .game-field__square--marked) {
+      @include mixins.main-border-invert;
+    }
+
+    &--visible-content {
+      font-size: 16px;
+    }
+
+    &--exposed {
+      padding: 5px;
+      border: 1px solid #808080;
+      background-color: rgba(0, 0, 0, 0.1);
+    }
+
+    &--win {
+      background-color: rgba(0, 128, 0, 0.4);
+    }
+
+    &--lose {
+      background-color: rgba(255, 0, 0, 0.4);
+    }
+
+    &--safe-square span {
+      animation: zoom 1s ease-in-out 300ms infinite alternate none;
+
+      @keyframes zoom {
+        0% {
+          transform: scale(1);
+        }
+
+        50% {
+          transform: scale(0.5);
+        }
+
+        100% {
+          transform: scale(1.5);
+        }
+      }
+    }
+
+    &--bomb-inside span {
+      animation: rotate 1s ease-in-out 300ms infinite alternate none;
+
+      @keyframes rotate {
+        0% {
+          transform: rotate(0deg);
+        }
+
+        50% {
+          transform: rotate(-35deg);
+        }
+
+        100% {
+          transform: rotate(10deg);
+        }
+      }
+    }
+
+    &--cause-lose {
+      background-color: rgb(200, 0, 0);
+    }
+
+    &--with-tooltip {
+      z-index: 9999;
+
+      &::before {
+        @include mixins.total-center;
+
+        content: "❌";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        font-size: 10px;
+        background-color: rgba(255, 255, 255, 0.5);
+        box-shadow: inset 0px 0px 10px 0px aquamarine;
+      }
+
+      .square__tooltip {
+        
+        &--flag {
+          transform: translateX(-4px) scale(1);
+        }
+        
+        &--expose {
+          transform: translateX(4px) scale(1);
+        }
+      }
+    }
+  }
+}
+
+.square__tooltip {
+  @include mixins.total-center;
+
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  font-size: 18px;
+  outline: 1px dashed black;
+  background-color: rgba(0, 0, 0, 0.9);
+  text-shadow: 0px 0px 5px white;
+  transition: transform 200ms ease-in-out;
+
+  &--flag {
+    left: -100%;
+    transform: translateX(-4px) scale(0);
+    background-color: rgba(1, 0, 77, 0.77);
+  }
+
+  &--expose {
+    left: 100%;
+    transform: translateX(4px) scale(0);
+    background-color: rgba(70, 0, 0, 0.77);
+  }
+}

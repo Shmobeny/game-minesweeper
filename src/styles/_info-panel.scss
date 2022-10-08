@@ -1,0 +1,54 @@
+@use 'mixins';
+
+.info-panel {
+  @include mixins.main-border-invert;
+
+  display: flex;
+  height: 75px;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  padding: 10px;
+
+  &__bombs,
+  &__time {
+    @include mixins.main-border-invert;
+
+    position: relative;
+    width: 78px;
+    padding: 5px;
+    font-size: 25px;
+    color: red;
+    text-align: center;
+    background-color: black;
+    text-shadow: 0px 0px 5px orange;
+    
+  }
+
+  &__player-logo {
+    @include mixins.main-border;
+
+    width: 45px;
+    padding: 5px;
+    font-size: 25px;
+    text-align: center;    
+  }
+
+  &__placeholder {
+    width: 100%;
+    text-align: center;
+    font-size: 30px;
+
+    @media screen and (max-width: 356px) {
+      font-size: 25px;
+    }
+
+    @media screen and (max-width: 289px) {
+      font-size: 20px;
+    }
+
+    @media screen and (max-width: 241px) {
+      font-size: 16px;
+    }
+  }
+}
