@@ -1,5 +1,12 @@
-## Minesweeper with React and Vite
-
+# Minesweeper with React and Vite
 I made this project in education purpose, while learning React.
 
-[Try my game right now :)](https://minesweeper-react-vite.surge.sh/) Also, you can install this app on your device via PWA and play offline! 
+**[Try my game right now :)](https://minesweeper-react-vite.surge.sh/)**
+
+## Features
+- **adaptive design:** game looks good at any screen size - mobile, or high resolution desktop monitor
+- **touch freindly controls:** app optimized for mouse and touch controls
+- **flexible gameplay:** user can change difficulty of the game by selecting quantity of bombs, squares and columns
+- **offline experience:** app use PWA technology, which gives opportunity to install it on any modern device and use it offline
+
+![Gameplay screenshot](/путь/к/изображению.jpg "This is how game looks like on my desktop ;)")
