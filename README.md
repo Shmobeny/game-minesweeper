@@ -9,4 +9,4 @@ I made this project in education purpose, while learning React.
 - **flexible gameplay:** user can change difficulty of the game by selecting quantity of bombs, squares and columns
 - **offline experience:** app use PWA technology, which gives opportunity to install it on any modern device and use it offline
 
-![Gameplay screenshot](/путь/к/изображению.jpg "This is how game looks like on my desktop ;)")
+![Gameplay screenshot](https://raw.githubusercontent.com/Shmobeny/game-minesweeper/main/gameplay_screenshot.png "This is how game looks like on my desktop ;)")
